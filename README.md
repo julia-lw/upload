@@ -1,11 +1,16 @@
-<h1>Cloud Storage API ☁️</h1>
+   <h1> Cloud Storage API ☁️ </h1>
 
-API desenvolvida para gerenciamento e armazenamento de arquivos em nuvem, permitindo o upload seguro de imagens e remoção de arquivos via rotas HTTP.
+Este projeto é uma API REST robusta desenvolvida em **NestJS** voltada para o gerenciamento, upload e exclusão de arquivos em um ambiente de nuvem simulado localmente. 
 
-<h1> 🚀 Pré-requisitos e Instalação</h1>
+A aplicação foi aprimorada com regras rigorosas de validação de dados de entrada, garantindo o controle total sobre o tamanho e o formato dos arquivos aceitos, além de contar com um fluxo estruturado de tratamento de exceções com retornos HTTP específicos.
 
-Antes de começar, certifique-se de ter o ambiente de execução da sua tecnologia instalado (ex: Node.js, PHP ou correspondente).
+---
 
-1. **Clone o repositório:**
-   ```bash
-   git clone [https://github.com/julia-lw/upload](https://github.com/julia-lw/upload)
+<h1> 🚀 Guia de Instalação e Execução </h1>
+
+Siga o passo a passo abaixo para clonar o repositório, instalar as dependências necessárias e colocar o servidor para rodar localmente na sua máquina.
+
+### 1. Clonando o Repositório
+Abra o seu terminal (Git Bash, Terminal do VS Code ou Prompt de Comando) e execute o comando abaixo para baixar o código:
+```bash
+git clone [https://github.com/julia-lw/upload](https://github.com/julia-lw/upload)
