@@ -66,12 +66,12 @@ Responsável por receber uma imagem e salvá-la de forma segura no diretório lo
 
 ---
 
-<h1>🛡️ Regras e Filtros Aplicados:</h1>
-Limite de Tamanho: Rejeição automática se o arquivo for maior que 5MB.
+### 🛡️ Regras e Filtros Aplicados:
+<h1>Limite de Tamanho:</h1> Rejeição automática se o arquivo for maior que 5MB.
 
-Formatos Permitidos: Aceita exclusivamente extensões de imagem populares: JPG, JPEG, PNG e TIFF.
+<h1>Formatos Permitidos:</h1> Aceita exclusivamente extensões de imagem populares: JPG, JPEG, PNG e TIFF.
 
-🟢 Resposta de Sucesso (Status 201 Created)
+### 🟢 Resposta de Sucesso (Status 201 Created)
 JSON
 {
   "message": "Arquivo enviado com sucesso!",
@@ -79,22 +79,30 @@ JSON
   "originalname": "meu-screenshot.png",
   "size": 1048576
 }
-🔴 Respostas de Erro de Validação:
+
+### 🔴 Respostas de Erro de Validação:
 Caso o tamanho exceda 5MB (Status 413 Payload Too Large):
 
+```bash
 JSON
 {
   "erro": "Arquivo muito grande",
   "mensagem": "O tamanho máximo permitido é de 5MB."
 }
+```
 Caso o formato não seja suportado - ex: PDF ou ZIP (Status 400 Bad Request):
 
+```bash
 JSON
 {
   "erro": "Formato inválido",
   "mensagem": "Apenas imagens nos formatos JPG, JPEG, PNG e TIFF são aceitas."
 }
-2. Listar Arquivos Armazenados
+```
+
+---
+
+<h1>2. Listar Arquivos Armazenados</h1>
 Exibe a relação completa e metadados de tudo o que está guardado no seu repositório de nuvem local.
 
 Método HTTP: GET
