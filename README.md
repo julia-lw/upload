@@ -42,7 +42,8 @@ O console exibirá os logs de inicialização do NestJS. A API estará pronta e 
 ---
 
 <h1>🧭 Como "Navegar" pelo Código</h1>
-Para facilitar a leitura e o entendimento da arquitetura do projeto por outros desenvolvedores, a estrutura principal de arquivos dentro da pasta <strong>src/arquivo/</strong> está dividida seguindo os padrões do framework:<br>
+Para facilitar a leitura e o entendimento da arquitetura do projeto por outros desenvolvedores, a estrutura principal de arquivos dentro da pasta <strong>src/arquivo/</strong> está dividida seguindo os padrões do framework:
+
 
 <strong>arquivo.controller.ts (Controlador de Rotas):</strong> É a porta de entrada da API. Aqui estão mapeados todos os endpoints públicos (URLs e métodos HTTP). Ele intercepta as requisições, faz o bind dos parâmetros e delega a execução para a camada de serviços.
 
