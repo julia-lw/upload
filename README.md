@@ -19,9 +19,11 @@ git clone [https://github.com/julia-lw/upload](https://github.com/julia-lw/uploa
 ### 2. Acessando a Pasta do Projeto
 Navegue até o diretório criado após a clonagem:
 
-Bash
-cd nome-do-repositorio
-3. Instalando as Dependências
+```bash
+cd upload
+```
+
+### 3. Instalando as Dependências
 Para baixar todos os pacotes e ecossistemas necessários (como o próprio NestJS e os gerenciadores de arquivos), execute o comando do gerenciador de pacotes:
 
 Bash
