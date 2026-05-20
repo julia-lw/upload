@@ -14,6 +14,7 @@ Siga o passo a passo abaixo para clonar o repositório, instalar as dependência
 Abra o seu terminal (Git Bash, Terminal do VS Code ou Prompt de Comando) e execute o comando abaixo para baixar o código:
 ```bash
 git clone [https://github.com/julia-lw/upload](https://github.com/julia-lw/upload)
+```
 
 ### 2. Acessando a Pasta do Projeto
 Navegue até o diretório criado após a clonagem:
