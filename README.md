@@ -26,13 +26,17 @@ cd upload
 ### 3. Instalando as Dependências
 Para baixar todos os pacotes e ecossistemas necessários (como o próprio NestJS e os gerenciadores de arquivos), execute o comando do gerenciador de pacotes:
 
-Bash
+```bash
 npm install
-4. Executando a API
+```
+
+### 4. Executando a API
 Inicie o servidor em ambiente de desenvolvimento. O modo watch reiniciará a aplicação automaticamente a cada alteração salva:
 
-Bash
+```bash
 npm run start:dev
+```
+
 O console exibirá os logs de inicialização do NestJS. A API estará pronta e escutando na porta padrão: http://localhost:3000
 
 🧭 Como Navegar pelo Código
