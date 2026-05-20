@@ -67,11 +67,13 @@ Responsável por receber uma imagem e salvá-la de forma segura no diretório lo
 ---
 
 ### 🛡️ Regras e Filtros Aplicados:
-<h1>Limite de Tamanho:</h1> Rejeição automática se o arquivo for maior que 5MB.
+<strong>Limite de Tamanho:</strong> Rejeição automática se o arquivo for maior que 5MB.
 
-<h1>Formatos Permitidos:</h1> Aceita exclusivamente extensões de imagem populares: JPG, JPEG, PNG e TIFF.
+<strong>Formatos Permitidos:</strong> Aceita exclusivamente extensões de imagem populares: JPG, JPEG, PNG e TIFF.
 
 ### 🟢 Resposta de Sucesso (Status 201 Created)
+
+```bash
 JSON
 {
   "message": "Arquivo enviado com sucesso!",
@@ -79,6 +81,7 @@ JSON
   "originalname": "meu-screenshot.png",
   "size": 1048576
 }
+```
 
 ### 🔴 Respostas de Erro de Validação:
 Caso o tamanho exceda 5MB (Status 413 Payload Too Large):
@@ -105,13 +108,15 @@ JSON
 <h1>2. Listar Arquivos Armazenados</h1>
 Exibe a relação completa e metadados de tudo o que está guardado no seu repositório de nuvem local.
 
-Método HTTP: GET
+<strong>Método HTTP:</strong> GET
 
-Rota Completa: http://localhost:3000/arquivos
+<strong>Rota Completa:</strong> http://localhost:3000/arquivo
 
-Parâmetros: Nenhum.
+<strong>Parâmetros:</strong> Nenhum.
 
-🟢 Resposta de Sucesso (Status 200 OK)
+### 🟢 Resposta de Sucesso (Status 200 OK)
+
+```bash
 JSON
 {
   "total": 1,
@@ -123,14 +128,16 @@ JSON
     }
   ]
 }
-3. Deletar um Arquivo por Nome
+```
+
+### 3. Deletar um Arquivo por Nome
 Busca um arquivo específico no drive pelo nome completo gerado pelo sistema e o remove de forma definitiva.
 
-Método HTTP: DELETE
+<strong>Método HTTP:</strong> DELETE
 
-Rota Completa: http://localhost:3000/arquivos/:filename
+<strong>Rota Completa:</strong> http://localhost:3000/arquivos/:filename
 
-Parâmetro de URL: Substitua o trecho :filename pelo nome exato do arquivo desejado com a extensão (Exemplo: http://localhost:3000/arquivos/imagem-171623456789.png).
+<strong>Parâmetro de URL:</strong> Substitua o trecho :filename pelo nome exato do arquivo desejado com a extensão (Exemplo: http://localhost:3000/arquivos/imagem-171623456789.png).
 
 🟢 Resposta de Sucesso (Status 200 OK)
 JSON
