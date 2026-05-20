@@ -39,8 +39,10 @@ npx npm run start
 
 O console exibirá os logs de inicialização do NestJS. A API estará pronta e escutando na porta padrão: http://localhost:3000
 
+---
+
 <h1>🧭 Como "Navegar" pelo Código</h1>
-Para facilitar a leitura e o entendimento da arquitetura do projeto por outros desenvolvedores, a estrutura principal de arquivos dentro da pasta src/arquivo/ está dividida seguindo os padrões do framework:
+Para facilitar a leitura e o entendimento da arquitetura do projeto por outros desenvolvedores, a estrutura principal de arquivos dentro da pasta <strong>src/arquivo/</strong> está dividida seguindo os padrões do framework:
 
 arquivo.controller.ts (Controlador de Rotas): É a porta de entrada da API. Aqui estão mapeados todos os endpoints públicos (URLs e métodos HTTP). Ele intercepta as requisições, faz o bind dos parâmetros e delega a execução para a camada de serviços.
 
