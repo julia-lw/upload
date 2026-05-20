@@ -6,6 +6,6 @@ API desenvolvida para gerenciamento e armazenamento de arquivos em nuvem, permit
 
 Antes de começar, certifique-se de ter o ambiente de execução da sua tecnologia instalado (ex: Node.js, PHP ou correspondente).
 
-1. **Clone o repositório:**
+<h1>1. Clone o repositório:</h1>
    ```bash
    git clone [https://github.com/julia-lw/upload](https://github.com/julia-lw/upload)
