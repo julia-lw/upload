@@ -42,13 +42,15 @@ O console exibirá os logs de inicialização do NestJS. A API estará pronta e 
 ---
 
 <h1>🧭 Como "Navegar" pelo Código</h1>
-Para facilitar a leitura e o entendimento da arquitetura do projeto por outros desenvolvedores, a estrutura principal de arquivos dentro da pasta <strong>src/arquivo/</strong> está dividida seguindo os padrões do framework:
+Para facilitar a leitura e o entendimento da arquitetura do projeto por outros desenvolvedores, a estrutura principal de arquivos dentro da pasta <strong>src/arquivo/</strong> está dividida seguindo os padrões do framework:<br>
 
-arquivo.controller.ts (Controlador de Rotas): É a porta de entrada da API. Aqui estão mapeados todos os endpoints públicos (URLs e métodos HTTP). Ele intercepta as requisições, faz o bind dos parâmetros e delega a execução para a camada de serviços.
+<strong>arquivo.controller.ts (Controlador de Rotas):</strong> É a porta de entrada da API. Aqui estão mapeados todos os endpoints públicos (URLs e métodos HTTP). Ele intercepta as requisições, faz o bind dos parâmetros e delega a execução para a camada de serviços.
 
-arquivo.service.ts (Regras de Negócio): Onde toda a lógica pesada acontece. Contém o construtor que inicializa e verifica a existência da pasta ./drive, os validadores de bytes e tipos de mídia (MimeTypes), e a manipulação direta do sistema de arquivos (fs) para salvar ou apagar do disco.
+<strong>arquivo.service.ts (Regras de Negócio):</strong> Onde toda a lógica pesada acontece. Contém o construtor que inicializa e verifica a existência da pasta ./drive, os validadores de bytes e tipos de mídia (MimeTypes), e a manipulação direta do sistema de arquivos (fs) para salvar ou apagar do disco.
 
-🛠️ Guia Completo de Endpoints e Uso da Ferramenta
+---
+
+<h1>🛠️ Guia Completo de Endpoints e Uso da Ferramenta<h1>
 Todas as rotas da API começam pelo prefixo base /arquivos. Você pode testar os endpoints utilizando clientes HTTP como Postman, Insomnia ou a extensão Thunder Client diretamente no VS Code.
 
 1. Adicionar um Arquivo (Upload de Imagem)
