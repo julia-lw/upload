@@ -139,23 +139,32 @@ Busca um arquivo específico no drive pelo nome completo gerado pelo sistema e o
 
 <strong>Parâmetro de URL:</strong> Substitua o trecho :filename pelo nome exato do arquivo desejado com a extensão (Exemplo: http://localhost:3000/arquivos/imagem-171623456789.png).
 
-🟢 Resposta de Sucesso (Status 200 OK)
+### 🟢 Resposta de Sucesso (Status 200 OK)
+
+```bash
 JSON
 {
   "sucesso": true,
   "mensagem": "O arquivo imagem-171623456789.png foi removido com sucesso."
 }
-🔴 Resposta de Erro (Status 404 Not Found)
+```
+
+### 🔴 Resposta de Erro (Status 404 Not Found)
 Caso o nome enviado não corresponda a nenhum arquivo físico no diretório:
 
+```bash
 JSON
 {
   "erro": "Não encontrado",
   "mensagem": "Nenhum arquivo com o nome \"arquivo-inexistente.png\" foi localizado."
 }
-🛠️ Tecnologias Utilizadas
-NestJS - Framework Node.js progressivo para a criação de aplicativos eficientes e escaláveis.
+```
 
-TypeScript - Superset Javascript que adiciona tipagem estática opcional ao código.
+---
 
-Multer - Middleware node.js para manipulação de multipart/form-data utilizado para upload.
+<h1>🛠️ Tecnologias Utilizadas</h1>
+<strong>NestJS -</strong> Framework Node.js progressivo para a criação de aplicativos eficientes e escaláveis.
+
+<strong>TypeScript -</strong> Superset Javascript que adiciona tipagem estática opcional ao código.
+
+<strong>Multer -</strong> Middleware node.js para manipulação de multipart/form-data utilizado para upload.
