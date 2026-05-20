@@ -11,7 +11,7 @@ A aplicação foi aprimorada com regras rigorosas de validação de dados de ent
 Siga o passo a passo abaixo para clonar o repositório, instalar as dependências necessárias e colocar o servidor para rodar localmente na sua máquina.
 
 ### 1. Clonando o Repositório
-Abra o seu terminal (Git Bash, Terminal do VS Code ou Prompt de Comando) e execute o comando abaixo para baixar o código. Ou vá até o GitHub Desktop 
+Vá até o GitHub Desktop, aperte em "File" na parte superior do canto esquerdo da tela, depois em "Clone Repository" abaixo e então cole o link em "URL". Ou abra o seu terminal (Git Bash, Terminal do VS Code ou Prompt de Comando) e execute o comando abaixo para baixar o código.
 ```bash
 git clone [https://github.com/julia-lw/upload](https://github.com/julia-lw/upload)
 ```
