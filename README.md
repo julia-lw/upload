@@ -53,7 +53,7 @@ Para facilitar a leitura e o entendimento da arquitetura do projeto por outros d
 <h1>🛠️ Guia Completo de Endpoints e Uso da Ferramenta</h1>
 Todas as rotas da API começam pelo prefixo base /arquivos. Você pode testar os endpoints utilizando clientes HTTP como Postman, Insomnia ou a extensão Thunder Client diretamente no VS Code.
 
-### 1. Adicionar um Arquivo (Upload de Imagem)
+### 1. Adicionar um Arquivo (Upload de Imagem)🏞️
 Responsável por receber uma imagem e salvá-la de forma segura no diretório local do servidor.
 
 <strong>Método HTTP:</strong> POST
