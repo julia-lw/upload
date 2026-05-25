@@ -4,7 +4,6 @@ import * as fs from 'fs';
 
 @Injectable()
 export class ArquivoService {
-  // Unificado para usar a mesma pasta do controller
   public readonly pastaUpload = './drive';
   
   constructor(){
@@ -22,7 +21,6 @@ export class ArquivoService {
       });
     }
 
-    // CORRIGIDO: Agora usando MimeTypes reais do navegador
     const formatosPermitidos = ['image/jpeg', 'image/jpg', 'image/png', 'image/tiff'];
     if (!formatosPermitidos.includes(arquivo.mimetype)) {
       throw new BadRequestException({
@@ -70,7 +68,6 @@ export class ArquivoService {
     return `This action updates a #${id} arquivo`;
   }
 
-  // Método único e funcional que o controller chama
   removePorNome(nome: string) {
     const caminhoArquivo = `${this.pastaUpload}/${nome}`;
 

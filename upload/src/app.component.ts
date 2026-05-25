@@ -1,6 +1,6 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ArquivoService } from './arquivo.service';
+import { ArquivoService } from './arquivo/arquivo.service';
 
 @Component({
   selector: 'app-root',

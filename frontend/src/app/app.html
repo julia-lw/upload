@@ -1,4 +1,4 @@
-<div class="min-h-screen w-full bg-gradient-to-tr from-sky-400 via-emerald-300 to-blue-500 p-8 font-sans relative overflow-hidden select-none">
+<div class="min-h-screen w-full bg-linear-to-tr from-sky-400 via-emerald-300 to-blue-500 p-8 font-sans relative overflow-hidden select-none">
   
   <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-white/20 rounded-full blur-[120px] pointer-events-none"></div>
   <div class="absolute bottom-[-5%] right-[-5%] w-[40vw] h-[40vw] bg-sky-200/30 rounded-full blur-[100px] pointer-events-none"></div>
@@ -13,8 +13,8 @@
         <p class="text-blue-950 font-medium text-sm mt-0.5">Sua galeria de mídia reativa e orgânica</p>
       </div>
 
-      <label class="relative group cursor-pointer bg-gradient-to-b from-emerald-400 to-emerald-600 hover:from-emerald-300 hover:to-emerald-500 text-white font-bold py-3 px-6 rounded-2xl shadow-[0_4px_15px_rgba(16,185,129,0.4)] hover:shadow-[0_6px_20px_rgba(16,185,129,0.6)] border-t border-white/50 active:scale-95 transition-all duration-200 flex items-center gap-2 text-sm overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-white/50 to-transparent h-[45%] rounded-b-lg pointer-events-none"></div>
+      <label class="relative group cursor-pointer bg-linear-to-b from-emerald-400 to-emerald-600 hover:from-emerald-300 hover:to-emerald-500 text-white font-bold py-3 px-6 rounded-2xl shadow-[0_4px_15px_rgba(16,185,129,0.4)] hover:shadow-[0_6px_20px_rgba(16,185,129,0.6)] border-t border-white/50 active:scale-95 transition-all duration-200 flex items-center gap-2 text-sm overflow-hidden">
+        <div class="absolute inset-0 bg-linear-to-b from-white/50 to-transparent h-[45%] rounded-b-lg pointer-events-none"></div>
         <span>Adicionar Nova Imagem</span>
         <input type="file" (change)="onFileSelected($event)" accept="image/*" class="hidden" />
       </label>
@@ -39,7 +39,7 @@
             
             <div class="group bg-white/20 backdrop-blur-lg border border-white/40 shadow-[0_8px_25px_rgba(0,0,0,0.05)] rounded-2xl overflow-hidden hover:scale-[1.03] hover:shadow-[0_12px_30px_rgba(14,165,233,0.3)] transition-all duration-300 flex flex-col relative">
               
-              <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"></div>
+              <div class="absolute inset-0 bg-linear-to-tr from-transparent via-white/10 to-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"></div>
               
               <div class="w-full h-48 bg-sky-100/40 relative overflow-hidden flex items-center justify-center border-b border-white/20">
                 <img [src]="'http://localhost:3000/' + foto.filename" 
@@ -48,7 +48,7 @@
                      onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=400'" />
               </div>
 
-              <div class="p-4 flex-1 flex flex-col justify-between bg-gradient-to-b from-white/10 to-white/30">
+              <div class="p-4 flex-1 flex flex-col justify-between bg-linear-to-b from-white/10 to-white/30">
                 <div class="truncate">
                   <p class="text-sm font-bold text-blue-950 truncate drop-shadow-sm" [title]="foto.filename">
                     {{ foto.filename }}
