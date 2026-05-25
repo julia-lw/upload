@@ -1,7 +1,5 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseInterceptors, UploadedFile, BadRequestException } from '@nestjs/common';
+import { Controller, Get, Post, Delete, Param, UseInterceptors, UploadedFile, BadRequestException } from '@nestjs/common';
 import { ArquivoService } from './arquivo.service';
-import { CreateArquivoDto } from './dto/create-arquivo.dto';
-import { UpdateArquivoDto } from './dto/update-arquivo.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { extname } from 'path';
@@ -10,7 +8,7 @@ import { extname } from 'path';
 export class ArquivoController {
   constructor(private readonly arquivoService: ArquivoService) {}
 
-@Post('upload')
+  @Post('upload')
   @UseInterceptors(
     FileInterceptor('file', {
       storage: diskStorage({
@@ -23,29 +21,20 @@ export class ArquivoController {
       }),
     }),
   )
-  uploadFile(@UploadedFile() file:Express.Multer.File){
+  uploadFile(@UploadedFile() file: Express.Multer.File){
     if(!file){
       throw new BadRequestException('Nenhum arquivo enviado.');
     }
     return this.arquivoService.create(file);
   }
+
   @Get()
   findAll() {
     return this.arquivoService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.arquivoService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateArquivoDto: UpdateArquivoDto) {
-    return this.arquivoService.update(+id, updateArquivoDto);
-  }
-
   @Delete(':filename')
-remove(@Param('filename') filename: string) {
-  return this.arquivoService.removePorNome(filename);
-}
+  remove(@Param('filename') filename: string) {
+    return this.arquivoService.removePorNome(filename);
+  }
 }

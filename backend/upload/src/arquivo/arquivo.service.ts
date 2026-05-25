@@ -1,5 +1,4 @@
 import { BadRequestException, Injectable, NotFoundException, PayloadTooLargeException } from '@nestjs/common';
-import { UpdateArquivoDto } from './dto/update-arquivo.dto';
 import * as fs from 'fs';
 
 @Injectable()
@@ -41,31 +40,18 @@ export class ArquivoService {
     try {
       if (!fs.existsSync(this.pastaUpload)) return { total: 0, files: [] };
       const files = fs.readdirSync(this.pastaUpload);
-      const fileList = files.map(
-        (filename) => {
-          const stats = fs.statSync(`${this.pastaUpload}/${filename}`);
-          return {
-            filename,
-            size: stats.size,
-            criado: stats.birthtime,
-          };
-        }
-      );
-      return {
-        total: fileList.length,
-        files: fileList,
-      };
+      const fileList = files.map((filename) => {
+        const stats = fs.statSync(`${this.pastaUpload}/${filename}`);
+        return {
+          filename,
+          size: stats.size,
+          criado: stats.birthtime,
+        };
+      });
+      return { total: fileList.length, files: fileList };
     } catch (error) {
       throw new BadRequestException('Não foi possível listar os arquivos.');
     }
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} arquivo`;
-  }
-
-  update(id: number, updateArquivoDto: UpdateArquivoDto) {
-    return `This action updates a #${id} arquivo`;
   }
 
   removePorNome(nome: string) {
@@ -80,10 +66,7 @@ export class ArquivoService {
 
     try {
       fs.unlinkSync(caminhoArquivo);
-      return {
-        sucesso: true,
-        mensagem: `O arquivo ${nome} foi removido com sucesso.`,
-      };
+      return { sucesso: true, mensagem: `Arquivo removido.` };
     } catch (error) {
       throw new BadRequestException('Não foi possível deletar o arquivo.');
     }
