@@ -1,14 +1,11 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
-import { CreateArquivoDto } from './dto/create-arquivo.dto';
+import { BadRequestException, Injectable, NotFoundException, PayloadTooLargeException } from '@nestjs/common';
 import { UpdateArquivoDto } from './dto/update-arquivo.dto';
-import { NotFoundException } from '@nestjs/common';
-import { PayloadTooLargeException } from '@nestjs/common';
 import * as fs from 'fs';
-import * as path from 'path';
 
 @Injectable()
 export class ArquivoService {
-  private readonly pastaUpload = './drive';
+  // Unificado para usar a mesma pasta do controller
+  public readonly pastaUpload = './drive';
   
   constructor(){
     if(!fs.existsSync(this.pastaUpload)){
@@ -25,7 +22,8 @@ export class ArquivoService {
       });
     }
 
-    const formatosPermitidos = ['./jpeg', './jpg', './png', './tiff'];
+    // CORRIGIDO: Agora usando MimeTypes reais do navegador
+    const formatosPermitidos = ['image/jpeg', 'image/jpg', 'image/png', 'image/tiff'];
     if (!formatosPermitidos.includes(arquivo.mimetype)) {
       throw new BadRequestException({
         erro: 'Formato inválido',
@@ -43,6 +41,7 @@ export class ArquivoService {
 
   findAll() {
     try {
+      if (!fs.existsSync(this.pastaUpload)) return { total: 0, files: [] };
       const files = fs.readdirSync(this.pastaUpload);
       const fileList = files.map(
         (filename) => {
@@ -71,8 +70,9 @@ export class ArquivoService {
     return `This action updates a #${id} arquivo`;
   }
 
+  // Método único e funcional que o controller chama
   removePorNome(nome: string) {
-    const caminhoArquivo = path.join(this.pastaUpload, nome);
+    const caminhoArquivo = `${this.pastaUpload}/${nome}`;
 
     if (!fs.existsSync(caminhoArquivo)) {
       throw new NotFoundException({
@@ -80,27 +80,15 @@ export class ArquivoService {
         mensagem: `Nenhum arquivo com o nome "${nome}" foi localizado.`,
       });
     }
-  }
 
-removerPorNome(nome: string) {
-  const caminhoArquivo = `${this.pastaUpload}/${nome}`;
-
-  if (!fs.existsSync(caminhoArquivo)) {
-    throw new NotFoundException({
-      erro: 'Não encontrado',
-      mensagem: `Nenhum arquivo com o nome "${nome}" foi localizado.`,
-    });
+    try {
+      fs.unlinkSync(caminhoArquivo);
+      return {
+        sucesso: true,
+        mensagem: `O arquivo ${nome} foi removido com sucesso.`,
+      };
+    } catch (error) {
+      throw new BadRequestException('Não foi possível deletar o arquivo.');
+    }
   }
-
-  try {
-    fs.unlinkSync(caminhoArquivo);
-    
-    return {
-      sucesso: true,
-      mensagem: `O arquivo ${nome} foi removido com sucesso.`,
-    };
-  } catch (error) {
-    throw new BadRequestException('Não foi possível deletar o arquivo.');
-  }
-}
 }
